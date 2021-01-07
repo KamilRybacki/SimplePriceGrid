@@ -8,44 +8,41 @@
   
   <title>Frontend Mentor | Single Price Grid Component</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-    @import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
-  </style>
   <link rel="stylesheet" href="simple_price_grid.css">
 </head>
 <body>
   <div class="simple_pricing_grid">
-    <div class="grid_element" id="top">
-      Join our community
+    <div class="simple_pricing_grid__top grid_element">
+      <h2 style="color: hsl(179, 62%, 43%)" id="top_title">Join our community</h2>
+      <h3 style="color: #BFDF32" id="top_subtitle">30-day, hassle-free money back guarantee</h3>
 
-      30-day, hassle-free money back guarantee
-
-      Gain access to our full library of tutorials along with expert code reviews. 
-      Perfect for any developers who are serious about honing their skills.
+      <div id="top_text">
+        <p>Gain access to our full library of tutorials along with expert code reviews.
+        Perfect for any developers who are serious about honing their skills.</p>
+      </div>
     </div>
-    <div class="grid_element" id="bot_left">
-      Monthly Subscription
+    <div class="simple_pricing_grid__bot_left grid_element">
+      <h3>Monthly Subscription</h3>
 
-      &dollar;29 per month
-
-      Full access for less than &dollar;1 a day
-    
-     <input type="button">
+      <p><h1 style="display:inline-block">&dollar;29</h1><span id="per_month">per month</span></p>
+      <p>Full access for less than &dollar;1 a day</p>
+      <p>
+        <input type="button" id="signup_button" value="Sign Up">
+      </p>
     </div>
 
-    <div class="grid_element" id="bot_right">
-      Why Us
-
-      Tutorials by industry experts
-      Peer &amp; expert code review
-      Coding exercises
-      Access to our GitHub repos
-      Community forum
-      Flashcard decks
-      New videos every week
+    <div class="simple_pricing_grid__bot_right grid_element">
+      
+      <h3 style="margin-top: 10px;">Why Us</h3>
+      <ul id="pros_list">
+        <li>Tutorials by industry experts</li>
+        <li>Peer &amp; expert code review</li>
+        <li>Coding exercises</li>
+        <li>Access to our GitHub repos</li>
+        <li>Community forum</li>
+        <li>Flashcard decks</li>
+        <li>New videos every week</li>
+      <ul>
     </div>
   </div>
   <footer>

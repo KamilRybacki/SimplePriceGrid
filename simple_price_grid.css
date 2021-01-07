@@ -1,34 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+:root{
+   --box-width: 635px;
+   --box-height: 475px;
+}
+
+* {
+   box-sizing: border-box;
+}
+
 body {
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   background-color: #E5EFF5;
+  
+   background-color: #E6EFF6;
+
 }
 
 .simple_pricing_grid {
 
    display: grid; 
+   grid-template-areas:
+   ' top top '
+   ' bot_left bot_right';
+   
+   grid-template-columns: 1fr 1fr;
+   
+   width: var(--box-width);
+   
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%, -50%);
+   -ms-transform: translate(-50%, -50%); /* for IE 9 */
+   -webkit-transform: translate(-50%, -50%); /* for Safari */
+   
+   border-radius: 10px;
+   box-shadow: 0px 0px 20px rgba(0,0,0,0.1);
+   
+   overflow: hidden;
+}
+
+@media (max-width: 375px){
+
+   .simple_pricing_grid {
+      grid-template-areas:
+      ' top '
+      ' bot_left '
+      ' bot_right' ;
+      grid-template-columns: 1fr;
+
+      width: 85%;
+   }
+   
+   .grid_element {
+      text-align: justify;
+      line-height: 24px;
+   }
+   
+   .simple_pricing_grid__top #top_text {
+      font-size: 14px;
+      text-align: justify;
+   }
+   
+   .simple_pricing_grid__top #top_title {
+      font-size: 20px;
+   }
+   
+   .simple_pricing_grid__top #top_subtitle {
+      font-size: 15px;
+   }
 
 }
 
-.grid_element {
+.simple_pricing_grid .grid_element {
+
    font-family: 'Karla';
+   text-align: left;
+   
+   padding-left: 40px;
+   padding-top: 30px;
+   padding-bottom: 30px;
+   
 }
 
-#top {
-   grid-column-start: 1;
-   grid-column-end: 2;
-   grid-row: 1;
+.simple_pricing_grid__top {
+   
+   background-color: white;
+   
+   grid-area: top;
+   
+}  
+
+.simple_pricing_grid__top #top_text {
+
+   color: hsl(179, 62%, 43%);
+   line-height: 28px;
+   width: 90%;
 }
 
-#bottom_left {
-   grid-row: 2;
-   grid-column: 1;
+.simple_pricing_grid__bot_left {
+   
+   background-color: #2BB3B1;
+
+   color: white;
+   
+   line-height: 5px;
+   
+   grid-area: bot_left;
+   
 }
 
-#bottom_right {
-   grid-row: 2;
-   grid-column: 2;
+.simple_pricing_grid__bot_left #per_month {
+
+   position: relative;
+   
+   left: 10px;
+   top: -5px;
+
+   color:rgba(255, 255, 255, 0.6);
+   
+
 }
 
+.simple_pricing_grid__bot_right {
 
+   background-color: #4ABEBD;
+
+   color: white;
+   
+   grid-area: bot_right;
+
+}
+
+#pros_list {
+
+   font-size: 14px;
+
+   text-indent: 0px;
+   padding: 0px;
+
+   list-style: none;
+
+}
+
+#pros_list li + li {
+
+   margin-top: 3px;
+
+}
+
+.simple_pricing_grid__bot_left #signup_button{
+
+   background-color: #BFDF32;
+   border: 0px;
+   
+   font-weight: 700;
+   font-size: 15px;
+
+   color: white;
+   text-shadow: rgba(0,0,0,0.2);
+   
+   width: 85%;
+   height: 50px;
+   
+   border-radius: 5px;
+   box-shadow: 0px 0px 20px rgba(0,0,0,0.2);
+   
+   margin-top: 20px;
+   
+}
+
+footer {
+
+   position: fixed;
+   bottom: 0px;
+
+}
